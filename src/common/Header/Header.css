@@ -21,3 +21,19 @@
 @keyframes app-logo-spin {
    from { transform: scaleX(-1); }
 }
+
+.tabs {
+    margin-bottom: 20px;
+}
+
+.displayNone {
+    display: none;
+}
+
+.displayBlock {
+    display: block;
+}
+
+.red {
+    color: red;
+}
