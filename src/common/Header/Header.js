@@ -131,6 +131,7 @@ class Header extends Component {
             <div>
                 <header className="header">
                     <img src={logo} alt="logo" className="app-logo" />
+                    <span id="logo-name">Yo! Movies</span>
                     <Button variant="contained" color="default" onClick={this.openModalHandler} id="header-btn" >
                         Login
                 </Button>

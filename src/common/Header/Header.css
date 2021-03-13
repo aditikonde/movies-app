@@ -6,20 +6,25 @@
 #header-btn {
     margin-top: 15px;
     margin-bottom: 15px;
-    left: 87%;
+    left: 75%;
 }
 
+#logo-name {
+    font-family: 'Acme', sans-serif;
+    color: white;
+    font-size: 25px;
+}    
 
 .app-logo {
-   animation: app-logo-spin infinite 8s linear;
-   height: 35px;
-   width: 40px;
-   background: #ff7f7f;
-   margin: -13px 10px;
+    animation: app-logo-spin infinite 8s linear;
+    height: 35px;
+    width: 40px;
+    background: #ff7f7f;
+    margin: -13px 10px;
 }
 
 @keyframes app-logo-spin {
-   from { transform: scaleX(-1); }
+    from { transform: scaleX(-1); }
 }
 
 .tabs {
