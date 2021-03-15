@@ -6,7 +6,11 @@
 #header-btn {
     margin-top: 15px;
     margin-bottom: 15px;
-    left: 75%;
+    left: 76%;
+}
+
+#book-btn {
+    left : 59%;
 }
 
 #logo-name {

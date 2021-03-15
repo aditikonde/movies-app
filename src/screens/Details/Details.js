@@ -89,7 +89,7 @@ class Details extends Component {
 
         return (
             <div>
-                <Header />
+                <Header showBookShowBtn="true" />
                 <div className="back">
                     <Typography onClick={this.backToHomeHandler}>
                         <span className="back-btn">&#60; Back to Home</span>

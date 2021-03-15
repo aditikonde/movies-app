@@ -1,0 +1,43 @@
+.book-show {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.card-style {
+    width: 280px;
+    padding: 32px 64px 32px 64px;
+    margin: auto;
+    text-align: left;
+
+}
+
+.back {
+    cursor: pointer;
+}
+
+.book-heading {
+    margin-top: -15px !important;
+    text-align: center; 
+    margin-bottom: 15px !important;
+}
+
+.formControl {
+    width: 240px;
+    margin-bottom: 16px !important;
+}
+
+.marginTop16 {
+    margin-top: 16px;
+}
+
+.dispNone {
+    display: none;
+}
+
+.dispBlock {
+    display: block;
+}
+
+.red {
+    color: red;
+}

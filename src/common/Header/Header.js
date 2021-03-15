@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './Header.css';
+import BookShow from '../../screens/Bookshow/BookShow';
+import ReactDom from 'react-dom';
 import Button from '@material-ui/core/Button';
 import logo from '../../assets/logo.svg';
 import Modal from 'react-modal';
@@ -125,6 +127,9 @@ class Header extends Component {
         this.setState({ registerPassword: e.target.value });
     }
 
+    bookShowHandler = () => {
+        ReactDom.render(<BookShow />, document.getElementById('root'));
+    }
 
     render() {
         return (
@@ -132,9 +137,18 @@ class Header extends Component {
                 <header className="header">
                     <img src={logo} alt="logo" className="app-logo" />
                     <span id="logo-name">Yo! Movies</span>
+
                     <Button variant="contained" color="default" onClick={this.openModalHandler} id="header-btn" >
                         Login
-                </Button>
+                    </Button>
+
+                    {this.props.showBookShowBtn === "true" ?
+                        <Button variant="contained" color="primary" onClick={this.bookShowHandler} id="book-btn" >
+                            BOOK SHOW
+                    </Button> : ""}
+
+
+
                 </header>
                 <Modal
                     ariaHideApp={false}
