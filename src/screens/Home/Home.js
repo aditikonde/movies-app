@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './Home.css';
+import Details from '../../screens/Details/Details';
+import ReactDom from 'react-dom';
 import artists from '../../common/artists';
 import genres from '../../common/genre';
 import Header from '../../common/Header/Header';
@@ -32,7 +34,8 @@ const styles = theme => ({
         background: '#ff7887',
         padding: '8px',
         fontSize: '1rem',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        marginBottom: '5px'
     },
     gridListUpcomingMovies: {
         flexWrap: 'nowrap',
@@ -81,6 +84,10 @@ class Home extends Component {
 
     }
 
+    movieClickHandler = (movieId) => {
+        ReactDom.render(<Details movieId={movieId} />, document.getElementById('root'));
+    }
+
     render() {
         const { classes } = this.props;
         return (
@@ -89,7 +96,7 @@ class Home extends Component {
                 <div className={classes.upcomingMoviesHeading}>
                     <span>Upocoming Movies</span>
                 </div>
-                <GridList cols={5} className={classes.gridListUpcomingMovies}>
+                <GridList cellHeight={280} cols={5} className={classes.gridListUpcomingMovies}>
                     {moviesData.map(movie => (
                         < GridListTile key={movie.id}>
                             <img src={movie.poster_url} alt={movie.title} />
@@ -104,7 +111,9 @@ class Home extends Component {
                         <GridList cellHeight={350} className={classes.gridList}>
 
                             {moviesData.map((movie) => (
-                                <GridListTile className="released-movie-grid-item" key={"grid" + movie.id}>
+                                <GridListTile
+                                    onClick={() => this.movieClickHandler(movie.id)}
+                                    className="released-movie-grid-item" key={"grid" + movie.id}>
                                     <img src={movie.poster_url} className="movie-poster" alt={movie.title} />
                                     <GridListTileBar
                                         title={movie.title}
