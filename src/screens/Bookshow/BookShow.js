@@ -17,6 +17,7 @@ import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import Button from '@material-ui/core/Button';
 import FormHelperText from '@material-ui/core/FormHelperText';
+import Summary from '../summary/Summary';
 
 class BookShow extends Component {
 
@@ -72,6 +73,11 @@ class BookShow extends Component {
         this.state.showTime === "" ? this.setState({ showTimeRequired: "displayBlock" }) : this.setState({ showTimeRequired: "displayNone" });
 
         this.state.tickets === 0 ? this.setState({ ticketsRequired: "displayBlock" }) : this.setState({ ticketsRequired: "displayNone" });
+
+        if (this.state.location !== "" && this.state.language !== "" && this.state.showDate !== "" && this.state.showTime !== "" && this.state.tickets !== 0) {
+            ReactDom.render(<Summary summaryInfo={this.state} />, document.getElementById('root'));
+        }
+
     }
 
     render() {
@@ -148,9 +154,10 @@ class BookShow extends Component {
                                 Total Price: {this.state.unitPrice * this.state.tickets}
                             </Typography>
                             <br />
-                            <br />
-                            <Button variant="contained" onClick={this.bookShowButtonHandler} color="primary" > BOOK SHOW </Button>
 
+                            <div className="booking-btn">
+                                <Button variant="contained" onClick={this.bookShowButtonHandler} style={{ 'width': '100%' }} color="primary" > BOOK SHOW </Button>
+                            </div>
                         </CardContent>
                     </Card>
                 </div>

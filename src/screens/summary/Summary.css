@@ -1,0 +1,27 @@
+.summry-item {
+    display: flex;
+}
+
+.left-item{
+    width: 70%;
+}
+
+.coupon {
+    width: 65%;
+}
+
+.apply-btn {
+    margin-top: 15px;
+}
+
+.message {
+  margin: 4px 0px 0px 16px
+}
+
+.snackbar {
+  margin-top: 64px;
+}
+
+.confirm {
+  display: flex;
+}
